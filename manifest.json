@@ -1,0 +1,30 @@
+{
+    "name" : "Weekly Dose",
+    "version" : "1.0",
+    "manifest_version" : 2,
+    "description" : "A Chrome plugin that reads the current browser URL and help share that article with the entire team of an organisation with just a click.",
+    "icons" : {
+        "128" : "WD_128.png",
+        "48" : "WD_48.png",
+        "16" : "WD_16.png"
+    },
+    "content_scripts" : [
+        {
+            "matches" : ["<all_urls>"],
+            "js" : ["content.js"]
+        }
+    ],
+    "browser_action" : {
+        "default_icon" : "WD_16.png",
+        "default_popup" : "popup.html",
+        "default_title" : "WeeklyDose"
+    },
+    "background": {
+        "scripts": ["background.js"]
+      },
+    "permissions" : [
+        "storage",
+        "notifications",
+        "tabs"
+    ]
+}
